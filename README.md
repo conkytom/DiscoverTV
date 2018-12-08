@@ -1,2 +1,3 @@
 # DiscoverTV
-A TV show discovery app powered by Rails and TMDB
+
+This app uses Ruby on Rails and The Movie Database API to help you dicover television shows you will want to watch.
