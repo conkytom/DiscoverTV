@@ -1,6 +1,6 @@
 Rails.application.configure do
     
-    Tmdb::Api.key(tmdb_api_key)
+    Tmdb::Api.key(Rails.application.credentials.tmdb_api_key)
 
     config = Tmdb::Configuration.get
 
