@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Materialize Design Suite
 gem 'materialize-sass'
 
+# The Movie DataBase 
+gem 'themoviedb-api'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

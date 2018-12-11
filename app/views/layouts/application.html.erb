@@ -7,9 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Materialize's Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+
+    <div class="header row">
+      <div class="col s.5">
+        <a href="<%= root_path %>">
+          <i class="material-icons right">home</i>
+        </a>
+      </div>
+      <%= form_tag("/search", method: "get") do %>
+      <div class="col s1.5">      
+        <button class="btn waves-effect waves-light" type="search">Search
+          <i class="material-icons right">search</i>
+        </button>
+      </div>  
+      <div class="col s4">
+        <input placeholder="Search for a show..." id="query" name="query" type="text">
+      </div>
+      <% end %>
+    </div>
+
     <%= yield %>
+  
   </body>
 </html>

@@ -1,10 +1,11 @@
 <div class="row">
-    <h3>Top Shows</h3>
-    <ol> 
-        <% @popular_shows.each do |show| %>            
+
+    <h3><%= Tmdb::Search.tv(params[:query]).total_results %> Search Results for "<%= :query %>"</h3>
+    <ul> 
+        <% @results.each do |show| %>            
             <%= link_to series_path(show.id) do %>
                 <li><img src="https://image.tmdb.org/t/p/w92<%= show.poster_path %>"><%= show.name %>, Score: <%= show.vote_average %></li>
             <% end %>
         <% end %>
-    </ol>
+    </ul>
 </div>
