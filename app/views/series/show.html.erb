@@ -1,2 +1,36 @@
-<h1><%= @series.name %></h1>
+<div class="row teal lighten-4 valign-wrapper">
+    <div class="col s10">
+        <h1><%= @series.name %></h1>
+    </div>
+    <div class="col s3 pull-s0.5">
+        <% if @series.first_air_date.length > 0 %>
+            <h6>(<%= @series.first_air_date %>)</h6>
+        <% end %>
+    </div>
+</div>
+<div class="row">
+    <div class="col s4">
+        <% if @series.poster_path %>
+            <img class="left" src="https://image.tmdb.org/t/p/w185<%= @series.poster_path %>">
+        <% else %>
+            <div class="left">
+                <%= image_tag("no_image_big.png") %>
+            </div>
+        <% end %>
+    </div>
+    <div class="col s8">
+        <table class="highlight">
+            <tr> 
+                <td colspan="2"><%= @series.overview %></td>
+            </tr>
+            <tr>
+                <td>Score: <%= @series.vote_average %></td>
+                <td class="blue-grey-text text-darken-3"><a href="<%= @series.homepage %>"><i class="material-icons">link</i>Website</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div>
+
+</div>
 

@@ -1,10 +1,21 @@
 <div class="row">
-    <h3>Top Shows</h3>
-    <ol> 
+    <h3>Top 20 Shows</h3>
+    <div class="row"> 
         <% @popular_shows.each do |show| %>            
             <%= link_to series_path(show.id) do %>
-                <li><img src="https://image.tmdb.org/t/p/w92<%= show.poster_path %>"><%= show.name %>, Score: <%= show.vote_average %></li>
+                <div class="col s4 hoverable shows-grid">                    
+                    <% if show.poster_path %>
+                        <img class="left" src="https://image.tmdb.org/t/p/w92<%= show.poster_path %>">
+                    <% else %>
+                        <img class="left" src="">
+                    <% end %>
+                    <div class="shows-grid-text center-align">
+                        <strong><%= show.name %></strong>
+                        </br>
+                        <small>Score: <%= show.vote_average %></small>
+                    </div>           
+                </div>
             <% end %>
         <% end %>
-    </ol>
+    </div>
 </div>

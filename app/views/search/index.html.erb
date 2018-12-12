@@ -1,11 +1,29 @@
 <div class="row">
-
-    <h3><%= Tmdb::Search.tv(params[:query]).total_results %> Search Results for "<%= :query %>"</h3>
-    <ul> 
+    <h3><%= Tmdb::Search.tv(params[:query]).total_results %> Search Results for "<%= params[:query] %>"</h3>
+    <div class="row"> 
         <% @results.each do |show| %>            
             <%= link_to series_path(show.id) do %>
-                <li><img src="https://image.tmdb.org/t/p/w92<%= show.poster_path %>"><%= show.name %>, Score: <%= show.vote_average %></li>
+                <div class="col s4 hoverable shows-grid">                    
+                    <% if show.poster_path %>
+                        <img class="left" src="https://image.tmdb.org/t/p/w92<%= show.poster_path %>">
+                    <% else %>
+                        <div class="left">
+                            <%= image_tag("no_image_small.png") %>
+                        </div>
+                    <% end %>
+                    <div class="shows-grid-text center-align">
+                        <strong><%= show.name %></strong>
+                        </br>
+                        <small>
+                            <% if show.first_air_date.length > 0 %>
+                                (<%= show.first_air_date %>)
+                                </br>
+                            <% end %>
+                            Score: <%= show.vote_average %>
+                        </small>
+                    </div>           
+                </div>
             <% end %>
         <% end %>
-    </ul>
+    </div>
 </div>

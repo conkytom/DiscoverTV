@@ -13,26 +13,29 @@
   </head>
 
   <body>
-
-    <div class="header row">
-      <div class="col s.5">
-        <a href="<%= root_path %>">
-          <i class="material-icons right">home</i>
+    
+    <div class="row blue-grey darken-3 valign-wrapper">
+      <div class="col s4 offset-s1">
+        <a class="teal-text text-lighten-4" href="<%= root_path %>">
+          <i class="material-icons left">home</i>
+          <span class="">DiscoverTV</span>
         </a>
       </div>
+
       <%= form_tag("/search", method: "get") do %>
-      <div class="col s1.5">      
-        <button class="btn waves-effect waves-light" type="search">Search
-          <i class="material-icons right">search</i>
-        </button>
-      </div>  
-      <div class="col s4">
-        <input placeholder="Search for a show..." id="query" name="query" type="text">
-      </div>
+        <div class="col s1.5">      
+          <button class="btn waves-effect waves-light valign-wrapper" type="search">Search
+            <i class="material-icons right">search</i>
+          </button>
+        </div>  
+        <div class="col s6">
+          <input class="teal-text text-lighten-4" placeholder="Search for a show..." id="query" name="query" type="text">
+        </div>
       <% end %>
     </div>
-
-    <%= yield %>
-  
+    
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

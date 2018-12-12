@@ -1,12 +1,6 @@
 Rails.application.configure do
     
-    Tmdb::Api.key(Rails.application.credentials.tmdb_api_key)
+    TMDB_API_KEY = Rails.application.credentials.tmdb_api_key 
+    Tmdb::Api.key(TMDB_API_KEY)
 
-    config = Tmdb::Configuration.get
-
-    # Response
-    
-
-    # Retrieve images base url example
-    base_url = config.images.base_url
 end
